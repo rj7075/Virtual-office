@@ -1,57 +1,69 @@
 // OfficeLocations.jsx
 import { useState, useRef } from "react";
+import PopupForm from "./Form";
 
 const OfficeLocations = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formTitle, setFormTitle] = useState("");
+
+  const handleOpenForm = (title) => {
+    setFormTitle(title);
+    setIsFormOpen(true);
+  };
   const scrollContainerRef = useRef(null);
 
   const [offices, setOffices] = useState([
     {
       id: 1,
-      name: "DLF Phase 2 & 3",
-      startingPrice: 833,
+      name: "Virtual Office in Mumbai",
+      startingPrice: 790,
       image:
         "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=500&q=60",
-      description: "Premium business district with excellent connectivity",
+      description: "Get your virtual office for GST registration in Mumbai.",
     },
     {
       id: 2,
-      name: "DLF Phase 1 & 4",
-      startingPrice: 833,
+      name: "Virtual Office in Navi Mumbai",
+      startingPrice: 790,
       image:
         "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=60",
-      description: "Modern commercial complex with ample amenities",
+      description: "Find the perfect virtual office space near you today.",
     },
     {
       id: 3,
-      name: "Golf Course Road",
-      startingPrice: 749,
+      name: "Virtual Office in Thane",
+      startingPrice: 790,
       image:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=60",
-      description: "Prestigious location with luxury office spaces",
+      description:
+        "Our virtual office services offer a prestigious business address.",
     },
     {
       id: 4,
-      name: "Sohna Road",
-      startingPrice: 749,
+      name: "Virtual Office in Pune",
+      startingPrice: 790,
       image:
         "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=500&q=60",
-      description: "Growing commercial corridor with great potential",
+      description:
+        "A flexible virtual workspace solution for your growing business.",
     },
     {
       id: 5,
-      name: "Cyber City",
-      startingPrice: 899,
+      name: "Virtual Office in Nagpur",
+      startingPrice: 625,
       image:
         "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=500&q=60",
-      description: "Tech hub with modern infrastructure",
+      description:
+        "Secure a professional registered office for your esteemed company.",
     },
     {
       id: 6,
-      name: "MG Road",
-      startingPrice: 799,
+      name: "Virtual Office in Aurangabad",
+      startingPrice: 625,
       image:
         "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=500&q=60",
-      description: "Historic commercial area with excellent facilities",
+      description:
+        "Explore our premium virtual office space options right now.",
     },
   ]);
 
@@ -87,7 +99,7 @@ const OfficeLocations = () => {
         {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Pick your new office address, anywhere in Gurgaon
+            Pick your new office address, anywhere in Mumbai
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose an office address that best represents your business and
@@ -100,7 +112,7 @@ const OfficeLocations = () => {
           {/* Left button */}
           <button
             onClick={scrollLeft}
-            className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-gray-100 transition"
+            className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-8 w-12 h-12 rounded-full bg-transparent shadow-lg hover:bg-gray-100 transition"
             aria-label="Scroll left"
           >
             <svg
@@ -122,7 +134,7 @@ const OfficeLocations = () => {
           {/* Right button */}
           <button
             onClick={scrollRight}
-            className="hidden md:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-gray-100 transition"
+            className="hidden md:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 z-8 w-12 h-12 rounded-full bg-transparent shadow-lg hover:bg-gray-100 transition"
             aria-label="Scroll right"
           >
             <svg
@@ -173,8 +185,11 @@ const OfficeLocations = () => {
                         ₹{office.startingPrice}/month
                       </p>
                     </div>
-                    <button className="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
-                      Know more
+                    <button
+                      onClick={() => handleOpenForm("Reserve My Address")}
+                      className="bg-blue-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"
+                    >
+                      Book Now
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 ml-2"
@@ -190,6 +205,11 @@ const OfficeLocations = () => {
                         />
                       </svg>
                     </button>
+                    <PopupForm
+                      isOpen={isFormOpen}
+                      onClose={() => setIsFormOpen(false)}
+                      formTitle={formTitle}
+                    />
                   </div>
                 </div>
               </div>
@@ -200,7 +220,7 @@ const OfficeLocations = () => {
         {/* Extra info */}
         <div className="text-center mt-8">
           <p className="text-gray-600 text-lg">
-            + {20} more virtual office locations in Gurgaon
+            + {20} more virtual office locations in Mumbai
           </p>
         </div>
 
@@ -221,16 +241,6 @@ const OfficeLocations = () => {
             </div>
           </div>
         </div>
-
-        {/* Demo add office */}
-        {/* <div className="text-center mt-8">
-          <button
-            onClick={addOffice}
-            className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition"
-          >
-            + Add New Office (Demo)
-          </button>
-        </div> */}
       </div>
 
       {/* Custom styles */}

@@ -10,6 +10,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import { cityData } from "./assets/cityData";
 import "./index.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("gurgaon");
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="font-sans">
       <Header />
+      <Toaster />
       <Hero
         city={currentCityData.city}
         setSelectedCity={setSelectedCity}

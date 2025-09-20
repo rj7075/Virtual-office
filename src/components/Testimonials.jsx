@@ -6,17 +6,17 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      text: "myHQ Team provided great and fast support to us! Great and fast service...",
-      name: "Harshit Arora",
+      text: "I highly recommend Asset Sense for virtual office space Delhi. Our bank asked for one extra doc and support replied within 3 minutes.",
+      name: "Ranjeet Sinha",
       position: "Director",
-      company: "Screen stitcheras",
+      company: "ShipKart",
       service: "Virtual Office",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
     },
     {
       id: 2,
-      text: "Everything was arranged swiftly by myHQ and all my requests were adhered to within a day...",
+      text: "Asset Sense provided excellent virtual office space in Gurgaon, helping my startup establish a professional presence without high costs. I saved ₹75,000 annually on office rent...",
       name: "Utkal Samal",
       position: "Director",
       company: "UHR Pharmachem Pvt Ltd",
@@ -26,7 +26,7 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      text: "myHQ as one stop solution for office space and New Business registration business plans...",
+      text: "Asset Sense as one stop solution for office space and New Business registration business plans...",
       name: "Amit Suresh Chavan",
       position: "CEO",
       company: "Quantinio Technologies Pvt Ltd",
@@ -36,7 +36,7 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      text: "Excellent service and support from the myHQ team. They made setting up our virtual office seamless...",
+      text: "Excellent service and support from the Asset Sense team. They made setting up our virtual office seamless...",
       name: "Priya Sharma",
       position: "Founder",
       company: "Tech Innovations Ltd",
@@ -70,7 +70,7 @@ const Testimonials = () => {
           {/* Left Button */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-8 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100"
             aria-label="Scroll left"
           >
             <svg
@@ -92,7 +92,7 @@ const Testimonials = () => {
           {/* Right Button */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-8 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100"
             aria-label="Scroll right"
           >
             <svg

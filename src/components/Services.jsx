@@ -4,7 +4,7 @@ const Services = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            All services you get with myHQ Virtual Office
+            All services you get with Asset Sense Virtual Office
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Get access to a cost-effective virtual office to take your business
@@ -56,7 +56,7 @@ const Services = () => {
                     Premium business address
                   </h3>
                   <p className="text-gray-600">
-                    of choice from myHQ listings across India
+                    of choice from Asset Sense listings across Mumbai
                   </p>
                 </div>
               </div>
